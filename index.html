@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Марк Вернер — семейный и портретный фотограф в Москве</title>
+<meta name="description" content="Авторская портретная съемка в стиле минимализма по методике «Бережная режиссура». Полная организация процесса под ключ, готовая серия ровно через 7 дней по договору.">
+<meta name="theme-color" content="#F7F7F7">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Марк Вернер — живые фотографии вашей семьи">
+<meta property="og:description" content="Портретная съемка в стиле минимализма. Всё под ключ: студия, стилист, макияж. Готовая серия через 7 дней.">
+<meta property="og:image" content="images/Family%20in%20studio.jpeg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20fill='%231A1A1A'/%3E%3Ctext%20x='16'%20y='23'%20font-family='Georgia,serif'%20font-size='19'%20fill='%23F7F7F7'%20text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
+
+<!-- Шрифты локально, без Google Fonts (ФЗ-152): Cormorant Garamond + Manrope,
+     те же начертания и подмножества, что отдавал Google Fonts. -->
+<link rel="stylesheet" href="assets/fonts.css">
+<!-- Модалка подключается ДО styles.css: палитра сайта переопределяет её
+     собственные переменные в самом конце styles.css. -->
+<link rel="stylesheet" href="lead-modal.css">
+<link rel="stylesheet" href="styles.css">
+<script>document.documentElement.classList.add('js');</script>
+</head>
+
+<body>
+
+<div class="progress" aria-hidden="true"><span data-progress></span></div>
+
+<!-- ============ HEADER ============ -->
+<header class="header" data-header>
+  <div class="header__inner">
+    <a class="brand" href="#hero" aria-label="Марк Вернер — на главную">
+      <span class="brand__name">Марк Вернер</span>
+      <span class="brand__role">Семейный&nbsp;и&nbsp;портретный фотограф</span>
+    </a>
+
+    <nav class="nav" data-nav aria-label="Основная навигация">
+      <a href="#portfolio-gallery">Портфолио</a>
+      <a href="#about-me">Обо мне</a>
+      <a href="#pricing-offer">Тариф</a>
+      <a href="#testimonials-slider">Отзывы</a>
+      <a href="#faq-accordion">Вопросы</a>
+      <a class="nav__cta" href="#contacts" data-open-modal>Забронировать</a>
+    </nav>
+
+    <button class="burger" type="button" data-nav-toggle aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ 01 · HERO ============ -->
+<section class="hero" id="hero">
+  <div class="hero__inner">
+
+    <div class="hero__content">
+      <p class="eyebrow reveal">Семейный и портретный фотограф&nbsp;&nbsp;·&nbsp;&nbsp;Москва</p>
+
+      <h1 class="hero__title reveal" style="--d:80ms">
+        Живые фотографии вашей&nbsp;семьи, которые станут искусством через годы
+      </h1>
+
+      <p class="hero__lead reveal" style="--d:160ms">
+        Авторская портретная съемка в стиле минимализма. Вам не нужно уметь позировать&nbsp;— я управляю
+        светом и атмосферой, чтобы поймать ваши настоящие эмоции.
+      </p>
+
+      <div class="hero__actions reveal" style="--d:240ms">
+        <a class="btn" href="#contacts" data-open-modal>Забронировать съемку и&nbsp;зафиксировать дату</a>
+      </div>
+
+      <p class="hero__micro reveal" style="--d:320ms">
+        Предоплата составляет всего 3&nbsp;000&nbsp;рублей, остаток&nbsp;— в день съемки.
+        Перенос даты без потери депозита возможен за&nbsp;48&nbsp;часов.
+      </p>
+
+      <div class="hero__foot reveal" style="--d:400ms">
+        <span class="hero__scroll"><i></i>Листайте вниз</span>
+        <span class="hero__stamp">10&nbsp;лет практики&nbsp;&nbsp;·&nbsp;&nbsp;7&nbsp;дней на выдачу</span>
+      </div>
+    </div>
+
+    <figure class="hero__media reveal reveal--media">
+      <img src="images/Family%20in%20studio.jpeg" alt="Семейная фотосессия в светлой студии: родители с детьми в естественной позе" width="896" height="1152" fetchpriority="high">
+      <figcaption>Семейная серия&nbsp;&nbsp;·&nbsp;&nbsp;2026</figcaption>
+    </figure>
+
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats" aria-label="Ключевые факты">
+  <div class="container">
+    <div class="stats__grid">
+      <div class="stats__item reveal"><b>10</b><span>лет в профессии</span></div>
+      <div class="stats__item reveal" style="--d:80ms"><b>7</b><span>дней до готовой серии</span></div>
+      <div class="stats__item reveal" style="--d:160ms"><b>8</b><span>съемок в месяц максимум</span></div>
+      <div class="stats__item reveal" style="--d:240ms"><b>60</b><span>кадров в авторской обработке</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · PAINS & SOLUTIONS ============ -->
+<section class="pains" id="features-pains">
+  <div class="container">
+
+    <header class="pains__head">
+      <p class="eyebrow reveal"><i class="num">02</i>Сомнения и стандарты работы</p>
+      <h2 class="h2 reveal" style="--d:60ms">Решение принимают не эмоции, а&nbsp;понимание процесса</h2>
+    </header>
+
+    <div class="pains__grid">
+
+      <div class="pains__col pains__col--left">
+        <h3 class="pains__title reveal">Что обычно мешает решиться на&nbsp;фотосессию?</h3>
+        <ol class="pains__list">
+          <li class="pain reveal">
+            <span class="pain__num">01</span>
+            <p class="pain__text">«Я не умею стоять перед камерой, поэтому на всех снимках выгляжу зажато и&nbsp;неестественно».</p>
+          </li>
+          <li class="pain reveal" style="--d:80ms">
+            <span class="pain__num">02</span>
+            <p class="pain__text">«Подготовка превращается в стресс: нужно самой искать студию, подбирать сочетающуюся одежду мужу и&nbsp;детям, искать визажиста».</p>
+          </li>
+          <li class="pain reveal" style="--d:160ms">
+            <span class="pain__num">03</span>
+            <p class="pain__text">«Фотографы отдают снимки месяцами, когда эмоции от самого дня уже полностью&nbsp;угасли».</p>
+          </li>
+        </ol>
+      </div>
+
+      <div class="pains__spine" aria-hidden="true"><span>→</span></div>
+
+      <div class="pains__col pains__col--right">
+        <h3 class="pains__title reveal">Как проходят съемки с&nbsp;Марком Вернером</h3>
+        <ol class="pains__list">
+          <li class="pain pain--fix reveal">
+            <span class="pain__num">01</span>
+            <p class="pain__text">Мы не используем статичные позы&nbsp;— я создаю комфортные ситуации и бережно направляю вас в&nbsp;движении. Вы просто общаетесь с&nbsp;близкими, а&nbsp;я ловлю честные, живые моменты.</p>
+          </li>
+          <li class="pain pain--fix reveal" style="--d:80ms">
+            <span class="pain__num">02</span>
+            <p class="pain__text">Беру всю организацию на&nbsp;себя. Мой стилист подберет лаконичные образы из вашего гардероба или аренды, а&nbsp;я забронирую лучшую светлую студию и&nbsp;приглашу проверенного мастера по&nbsp;естественному макияжу.</p>
+          </li>
+          <li class="pain pain--fix reveal" style="--d:160ms">
+            <span class="pain__num">03</span>
+            <p class="pain__text">Четкий дедлайн в&nbsp;договоре&nbsp;— вы получите всю серию в&nbsp;авторской цветокоррекции ровно через 7&nbsp;дней после съемки, без задержек и&nbsp;напоминаний.</p>
+          </li>
+        </ol>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · PORTFOLIO ============ -->
+<section class="gallery" id="portfolio-gallery">
+  <div class="container">
+
+    <header class="gallery__head">
+      <div>
+        <p class="eyebrow reveal"><i class="num">03</i>Портфолио</p>
+        <h2 class="h2 reveal" style="--d:60ms">Съемки без&nbsp;лишнего шума</h2>
+      </div>
+      <p class="gallery__note reveal" style="--d:120ms">
+        Нейтральные светлые тона, минимум реквизита, максимум внимания к&nbsp;лицам.
+        Каждый кадр&nbsp;— результат «бережной режиссуры», а&nbsp;не&nbsp;набора поз.
+      </p>
+    </header>
+
+    <!-- Asymmetric magazine grid -->
+    <div class="mag reveal">
+
+      <div class="mag__row">
+        <figure class="mag__item mag__item--v">
+          <div class="ph"><img src="images/portfolio-family-field.jpeg" alt="Семья на прогулке в поле: родители и дети в естественном движении" width="896" height="1152" loading="lazy"></div>
+          <figcaption><i>01</i>Семья&nbsp;·&nbsp;поле</figcaption>
+        </figure>
+
+        <figure class="mag__item mag__item--s">
+          <div class="ph"><img src="images/mother-child-in-green-grass-color-1x1_1.jpeg" alt="Мама и ребенок на зелёной траве, цветной кадр, крупный план" width="1024" height="1024" loading="lazy"></div>
+          <figcaption><i>02</i>Мать и&nbsp;дитя</figcaption>
+        </figure>
+
+        <figure class="mag__item mag__item--w">
+          <div class="ph"><img src="images/portfolio-family-water-horizontal_2.jpeg" alt="Семья у воды: мама, папа и ребенок во время купания" width="1280" height="768" loading="lazy"></div>
+          <figcaption><i>03</i>Семья&nbsp;·&nbsp;вода</figcaption>
+        </figure>
+      </div>
+
+      <div class="mag__row">
+        <figure class="mag__item mag__item--s">
+          <div class="ph"><img src="images/Mother%20and%20child-1x1.jpeg" alt="Мать и ребенок, спокойный совместный взгляд" width="768" height="768" loading="lazy"></div>
+          <figcaption><i>04</i>Мать и&nbsp;дитя</figcaption>
+        </figure>
+
+        <figure class="mag__item mag__item--v">
+          <div class="ph"><img src="images/portfolio-young-couplewaistup-vertical-3x4.jpeg" alt="Молодая пара, поясной портрет в светлом интерьере" width="896" height="1152" loading="lazy"></div>
+          <figcaption><i>05</i>Пара</figcaption>
+        </figure>
+
+        <figure class="mag__item mag__item--w">
+          <div class="ph"><img src="images/Mother%20and%20child-horizontal_1.jpeg" alt="Мать и ребенок в движении, широкий горизонтальный кадр" width="1280" height="768" loading="lazy"></div>
+          <figcaption><i>06</i>Мать и&nbsp;дитя</figcaption>
+        </figure>
+      </div>
+
+    </div>
+
+    <!-- Wide cinematic band -->
+    <div class="series">
+      <p class="series__label reveal">Серия «Вода»&nbsp;&nbsp;— 2026</p>
+      <div class="band">
+        <figure class="band__item reveal"><img src="images/portfolio-family-water-horizontal_1.jpeg" alt="Семья у воды, ранний кадр серии" width="1280" height="768" loading="lazy"></figure>
+        <figure class="band__item reveal" style="--d:100ms"><img src="images/portfolio-family-water-horizontal_3.jpeg" alt="Семья у воды, центральный кадр серии" width="1280" height="768" loading="lazy"></figure>
+        <figure class="band__item reveal" style="--d:200ms"><img src="images/portfolio-family-water-horizontal_5.jpeg" alt="Семья у воды, финальный кадр серии" width="1280" height="768" loading="lazy"></figure>
+      </div>
+    </div>
+
+    <!-- Portrait strip -->
+    <div class="series">
+      <p class="series__label reveal">Портретная серия</p>
+      <div class="strip">
+        <figure class="strip__item reveal"><img src="images/portfolio-woman-young-waistup-vertical-3x4.jpeg" alt="Портрет молодой женщины, поясной кадр, мягкий свет" width="896" height="1152" loading="lazy"><figcaption>01</figcaption></figure>
+        <figure class="strip__item reveal" style="--d:70ms"><img src="images/portfolio-woman-young-in-black-suit-waistup-vertical-3x4.jpeg" alt="Портрет женщины в темном костюме, деловой кадр" width="896" height="1152" loading="lazy"><figcaption>02</figcaption></figure>
+        <figure class="strip__item reveal" style="--d:140ms"><img src="images/portfolio-woman-middle-waistup-vertical-3x4.jpeg" alt="Портрет женщины среднего возраста, поясной кадр" width="896" height="1152" loading="lazy"><figcaption>03</figcaption></figure>
+        <figure class="strip__item reveal" style="--d:210ms"><img src="images/portfolio-woman-senior-closeup-vertical-3x4.jpeg" alt="Портрет пожилой женщины, крупный план" width="896" height="1152" loading="lazy"><figcaption>04</figcaption></figure>
+        <figure class="strip__item reveal" style="--d:280ms"><img src="images/portfolio-teen-boy-waistup-vertical-3x4.jpeg" alt="Портрет подростка, поясной кадр на светлом фоне" width="896" height="1152" loading="lazy"><figcaption>05</figcaption></figure>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 04 · ABOUT ============ -->
+<section class="about" id="about-me">
+  <div class="container about__grid">
+
+    <div class="about__media">
+      <figure class="about__main reveal reveal--media">
+        <img src="images/Photographer-with-camera-vertical-3x4_3.jpeg" alt="Марк Вернер с камерой во время съемки, поясной портрет в светлой студии" width="896" height="1152" loading="lazy">
+      </figure>
+      <p class="about__cap">Марк Вернер&nbsp;&nbsp;·&nbsp;&nbsp;фотограф, 10&nbsp;лет практики</p>
+    </div>
+
+    <div class="about__text">
+      <p class="eyebrow reveal"><i class="num">04</i>Обо мне</p>
+      <h2 class="about__title reveal" style="--d:60ms">Меня зовут Марк Вернер, и я создаю честные портреты</h2>
+
+      <p class="lead reveal" style="--d:120ms">
+        За&nbsp;10&nbsp;лет в фотографии я понял одну вещь: лучшие кадры получаются тогда, когда вы забываете
+        о камере. Моя задача как фотографа&nbsp;— не заставить вас «правильно стоять», а создать
+        пространство, в котором вам и вашей семье будет легко быть собой.
+      </p>
+
+      <p class="reveal" style="--d:180ms">
+        Я полностью освобождаю вас от организационной рутины. Вместе с командой мы берем на себя
+        подбор образов, локации и макияжа, чтобы сам день съемки стал для вас приятным семейным
+        воспоминанием, а не источником стресса. Через 7&nbsp;дней вы получите не просто снимки,
+        а осязаемую историю вашей семьи.
+      </p>
+
+      <p class="signature reveal" style="--d:240ms">Марк Вернер</p>
+
+      <a class="link-arrow reveal" style="--d:300ms" href="#portfolio-gallery">Смотреть портфолио</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 05 · PRICING ============ -->
+<section class="pricing" id="pricing-offer">
+  <div class="container">
+
+    <p class="eyebrow eyebrow--center reveal"><i class="num">05</i>Условия съемки</p>
+
+    <article class="card reveal" style="--d:60ms">
+
+      <h2 class="card__title">Единый формат съемки «Всё включено»</h2>
+
+      <div class="card__price">
+        <span class="card__amount">34&nbsp;000&nbsp;₽</span>
+        <span class="card__per">за полную сессию, 2&nbsp;часа</span>
+      </div>
+
+      <p class="card__prepay">
+        Предоплата&nbsp;— 3&nbsp;000&nbsp;₽, остаток в&nbsp;день съемки.
+      </p>
+
+      <div class="card__divider" role="presentation"></div>
+
+      <p class="card__sub">Что входит в стоимость</p>
+      <ul class="incl">
+        <li class="incl__item">
+          <span class="incl__num">01</span>
+          <p>2&nbsp;часа съемки в премиальной минималистичной студии (аренда уже включена).</p>
+        </li>
+        <li class="incl__item">
+          <span class="incl__num">02</span>
+          <p>Консультация стилиста по подбору одежды в единой концепции (до&nbsp;4&nbsp;человек).</p>
+        </li>
+        <li class="incl__item">
+          <span class="incl__num">03</span>
+          <p>60&nbsp;лучших кадров в авторской обработке + печать 10&nbsp;портретов в паспарту.</p>
+        </li>
+      </ul>
+
+      <div class="card__divider" role="presentation"></div>
+
+      <div class="urgency">
+        <div class="urgency__text">
+          <p class="urgency__lead">В этом месяце я могу взять только 8&nbsp;семейных съемок, чтобы уделить максимум времени детальной подготовке каждого кадра.</p>
+          <p class="urgency__left">Осталось всего <b>3</b> свободных слота</p>
+        </div>
+        <div class="slots" aria-hidden="true">
+          <i class="is-taken"></i><i class="is-taken"></i><i class="is-taken"></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+
+      <div class="guarantee">
+        <p class="guarantee__label">Финансовая гарантия</p>
+        <p class="guarantee__text">
+          Мы подписываем официальный договор. Если я задержу готовые фотографии хотя бы на один день,
+          я верну вам <b>20%</b> от стоимости сессии.
+        </p>
+      </div>
+
+      <a class="btn btn--block" href="#contacts" data-open-modal>Обсудить идею и занять свободный слот</a>
+
+      <p class="card__micro">
+        Бронь слота фиксируется предоплатой 3&nbsp;000&nbsp;₽. Перенос даты без потери депозита&nbsp;— за&nbsp;48&nbsp;часов.
+      </p>
+
+    </article>
+  </div>
+</section>
+
+<!-- ============ 06 · TESTIMONIALS ============ -->
+<section class="reviews" id="testimonials-slider">
+  <div class="container">
+
+    <header class="reviews__head">
+      <p class="eyebrow reveal"><i class="num">06</i>Отзывы</p>
+      <h2 class="h2 reveal" style="--d:60ms">Что говорят семьи</h2>
+    </header>
+
+    <div class="slider" data-slider>
+      <div class="slider__viewport" data-viewport>
+        <ul class="slider__track" data-track>
+
+          <li class="slide" role="group" aria-roledescription="отзыв" aria-label="1 из 5">
+            <blockquote>«Больше всего боялась, что муж взбунтуется из-за позирования. Но Марк просто попросил нас пить чай и обнимать детей. Мы забыли про камеру через 10&nbsp;минут. Фотографии получились невероятно глубокими, без капли фальши».</blockquote>
+            <p class="slide__author">Елена и Игорь Л.</p>
+          </li>
+
+          <li class="slide" role="group" aria-roledescription="отзыв" aria-label="2 из 5">
+            <blockquote>«Для меня критически важны сроки. Предыдущий опыт с другим фотографом длился 3&nbsp;месяца. Марк прислал ссылку ровно на седьмой день, как и обещал. Качество портретов&nbsp;— как для обложки журнала. Огромное спасибо за пунктуальность!»</blockquote>
+            <p class="slide__author">Ольга К.</p>
+          </li>
+
+          <li class="slide" role="group" aria-roledescription="отзыв" aria-label="3 из 5">
+            <blockquote>«Вся подготовка прошла незаметно. Стилист подсказала, какие вещи из дома взять, а что докупить в один клик. В студии была очень спокойная атмосфера, дети не капризничали. Кадры висят на стене в гостиной, радуют каждый день».</blockquote>
+            <p class="slide__author">Семья Л.</p>
+          </li>
+
+          <li class="slide" role="group" aria-roledescription="отзыв" aria-label="4 из 5">
+            <blockquote>«Делал личный портрет для профиля компании. С Марком легко работать. Никакого пафоса, четкие подсказки по делу, отличный свет. Результатом доволен, полностью отражает мой рабочий настрой без лишней мишуры».</blockquote>
+            <p class="slide__author">Михаил В.</p>
+          </li>
+
+          <li class="slide" role="group" aria-roledescription="отзыв" aria-label="5 из 5">
+            <blockquote>«Это наша лучшая съемка. Минимализм&nbsp;— это любовь. На фотографиях видны наши глаза, улыбки, теплота, а не интерьер студии. Очень бережное отношение к героям в кадре».</blockquote>
+            <p class="slide__author">Татьяна и дочь С.</p>
+          </li>
+
+        </ul>
+      </div>
+
+      <div class="slider__controls">
+        <button class="slider__btn" type="button" data-prev aria-label="Предыдущий отзыв">
+          <span aria-hidden="true">←</span> Назад
+        </button>
+        <p class="slider__count"><span data-current>01</span><i>/</i><span data-total>05</span></p>
+        <button class="slider__btn" type="button" data-next aria-label="Следующий отзыв">
+          Далее <span aria-hidden="true">→</span>
+        </button>
+      </div>
+
+      <div class="slider__dots" data-dots role="tablist" aria-label="Выбор отзыва"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ 07 · FAQ ============ -->
+<section class="faq" id="faq-accordion">
+  <div class="container faq__grid">
+
+    <header class="faq__head">
+      <p class="eyebrow reveal"><i class="num">07</i>Вопросы</p>
+      <h2 class="h2 reveal" style="--d:60ms">Частые вопросы</h2>
+      <p class="faq__hint reveal" style="--d:120ms">Не нашли ответ&nbsp;— напишите мне в мессенджер, отвечу лично.</p>
+    </header>
+
+    <div class="acc" data-acc>
+
+      <div class="acc__item reveal">
+        <h3>
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="a1" id="q1">
+            <span class="acc__q">Что делать, если ребенок раскапризничается во время съемки?</span>
+            <span class="acc__sign" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </h3>
+        <div class="acc__panel" id="a1" role="region" aria-labelledby="q1">
+          <div class="acc__body">
+            <p>Это абсолютно нормально. Мы закладываем 2&nbsp;часа на сессию специально, чтобы у нас было время на перерыв. Мы попьем сок, переключим внимание ребенка и продолжим в спокойном темпе. Нам не нужно никуда спешить.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc__item reveal" style="--d:50ms">
+        <h3>
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="a2" id="q2">
+            <span class="acc__q">Помогаете ли вы с выбором одежды?</span>
+            <span class="acc__sign" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </h3>
+        <div class="acc__panel" id="a2" role="region" aria-labelledby="q2">
+          <div class="acc__body">
+            <p>Да, это обязательная часть подготовки. Наш стилист создаст для вашей семьи индивидуальный мудборд (карту стиля) на основе вещей, которые у вас уже есть, и подскажет, какие базовые элементы стоит добавить для гармоничного кадра.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc__item reveal" style="--d:100ms">
+        <h3>
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="a3" id="q3">
+            <span class="acc__q">Можно ли сделать съемку конфиденциальной?</span>
+            <span class="acc__sign" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </h3>
+        <div class="acc__panel" id="a3" role="region" aria-labelledby="q3">
+          <div class="acc__body">
+            <p>Конечно. Если вы не хотите, чтобы ваши фотографии публиковались в моем портфолио или социальных сетях, просто сообщите мне об этом до подписания договора. Никаких доплат за конфиденциальность нет.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc__item reveal" style="--d:150ms">
+        <h3>
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="a4" id="q4">
+            <span class="acc__q">Сколько фото я получу и будут ли исходники?</span>
+            <span class="acc__sign" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </h3>
+        <div class="acc__panel" id="a4" role="region" aria-labelledby="q4">
+          <div class="acc__body">
+            <p>Вы получаете 60&nbsp;полностью готовых кадров в авторской цветокоррекции и легкой естественной ретуши. Необработанные исходные файлы (RAW) я не отдаю, так как считаю обработку неотъемлемой частью своего художественного стиля.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc__item reveal" style="--d:200ms">
+        <h3>
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="a5" id="q5">
+            <span class="acc__q">Что делать, если мы заболели или резко поменялись планы?</span>
+            <span class="acc__sign" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </h3>
+        <div class="acc__panel" id="a5" role="region" aria-labelledby="q5">
+          <div class="acc__body">
+            <p>Мы бесплатно перенесем съемку на другую свободную дату. Пожалуйста, предупредите меня минимум за&nbsp;48&nbsp;часов до начала, чтобы мы успели скорректировать бронь студии без потери вашего депозита.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="acc__item reveal" style="--d:250ms">
+        <h3>
+          <button class="acc__btn" type="button" data-acc-btn aria-expanded="false" aria-controls="a6" id="q6">
+            <span class="acc__q">Вы работаете только в фотостудии или можно провести съемку дома?</span>
+            <span class="acc__sign" aria-hidden="true"><i></i><i></i></span>
+          </button>
+        </h3>
+        <div class="acc__panel" id="a6" role="region" aria-labelledby="q6">
+          <div class="acc__body">
+            <p>Мы можем провести съемку в вашей квартире, если в ней много естественного света и интерьер выполнен в спокойных светлых тонах. Домашняя обстановка отлично подходит для формата «бережной режиссуры» и делает семейные кадры еще более личными.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ 08 · FOOTER / CONTACTS ============ -->
+<footer class="footer" id="contacts">
+  <div class="container">
+
+    <p class="eyebrow eyebrow--light reveal"><i class="num">08</i>Контакты</p>
+
+    <h2 class="footer__title reveal" style="--d:60ms">Давайте создадим вашу историю вместе</h2>
+
+    <p class="footer__text reveal" style="--d:120ms">
+      Напишите мне в удобный российский сервис связи, чтобы обсудить свободные даты на этот месяц
+      или забронировать бесплатную 15-минутную консультацию по вашей будущей съемке.
+    </p>
+
+    <!-- ЗАМЕНИТЕ ссылки на реальные профили мессенджеров.
+         Пока это заглушки: href="#" — script.js явно игнорирует пустые якоря,
+         поэтому клик ничего не делает и страница не прыгает наверх.
+         Сервисы только российские (ВК, МАКС, ОК)&nbsp;— требование ФЗ-152. -->
+    <div class="footer__links reveal" style="--d:180ms">
+      <a class="soc" href="#" rel="nofollow">Написать во ВКонтакте <span aria-hidden="true">↗</span></a>
+      <a class="soc" href="#" rel="nofollow">Написать в МАКС <span aria-hidden="true">↗</span></a>
+      <a class="soc" href="#" rel="nofollow">Написать в Одноклассники <span aria-hidden="true">↗</span></a>
+    </div>
+
+    <div class="footer__rule" role="presentation"></div>
+
+    <div class="footer__meta">
+      <p class="reveal">Телефон: <a class="nowrap" href="tel:+79990000000">+7 (999) 000-00-00</a></p>
+      <!-- nowrap на абзаце с адресом не ставим: каждый элемент адреса
+           уже защищён &nbsp;, а nowrap растянул бы колонку грида на всю
+           ширину адреса и обрезал текст на узком экране. Проверено замером. -->
+      <p class="reveal" style="--d:60ms">Студия: г.&nbsp;Москва, ул.&nbsp;Большая Дмитровка, д.&nbsp;12 (по предварительной записи)</p>
+      <p class="reveal" style="--d:120ms">Семейные и портретные съемки в стиле минимализма</p>
+      <!-- ЗАМЕНИТЕ href на реальную страницу политики (например privacy.html).
+           Ссылка обязательна и под формой, и в подвале&nbsp;— ФЗ-152.
+           Оформление берётся из общего правила .footer__meta a. -->
+      <p class="reveal" style="--d:180ms">
+        <a href="#" rel="nofollow">Политика обработки персональных данных</a>
+      </p>
+    </div>
+
+    <!-- ДИСКЛЕЙМЕР -->
+    <aside class="disclaimer" role="note">
+      <p class="disclaimer__title">Дисклеймер</p>
+      <p>
+        Этот сайт&nbsp;— учебный проект, созданный в рамках учебной работы.
+        Марк Вернер является вымышленным персонажем, а вся информация на сайте
+        (цены, адреса, телефоны, отзывы, гарантии и условия съемки) является
+        вымышленной и приведена исключительно в демонстрационных целях.
+        Сайт не является публичной офертой и не предлагает реальных услуг.
+      </p>
+    </aside>
+
+    <div class="footer__bottom">
+      <p>© 2026&nbsp;Марк Вернер</p>
+      <a class="footer__top" href="#hero">Наверх ↑</a>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Mobile sticky CTA -->
+<div class="mcta" data-mcta>
+  <a class="btn btn--block" href="#contacts" data-open-modal>Забронировать съемку</a>
+  <a class="mcta__tel nowrap" href="tel:+79990000000">+7 (999) 000-00-00</a>
+</div>
+
+<!-- ============ МОДАЛКА С ФОРМОЙ ЗАЯВКИ ============ -->
+<!-- Переносимый блок из _lib\lead-modal\. Настраивается только здесь:
+     ссылка на форму&nbsp;— в data-src у iframe (обязательно ?iframe=1),
+     тексты&nbsp;— в .lm__badge / .lm__title / .lm__subtitle.
+     Открывается по любому элементу с атрибутом data-open-modal;
+     href="#contacts" у таких кнопок остаётся запасным вариантом,
+     если скрипт не запустился. -->
+<div class="lm" id="leadModal" role="dialog" aria-modal="true"
+     aria-label="Форма заявки" aria-hidden="true"
+     data-lm-timeout="12000">
+
+  <!-- Подложка: клик по ней закрывает форму -->
+  <button class="lm__overlay" type="button" data-lm-close aria-label="Закрыть форму"></button>
+
+  <div class="lm__dialog">
+    <div class="lm__head">
+      <button class="lm__close" type="button" data-lm-close aria-label="Закрыть форму">&times;</button>
+
+      <span class="lm__badge">Бронируем месяц за&nbsp;3&nbsp;000&nbsp;₽</span>
+
+      <h2 class="lm__title">Оставьте контакты&nbsp;— <strong>забронируем дату за&nbsp;15&nbsp;минут</strong></h2>
+
+      <p class="lm__subtitle">Пришлю свободные слоты на этот месяц и расскажу, как проходит съёмка.</p>
+    </div>
+
+    <div class="lm__body">
+      <div class="lm-frame" id="lmFrame">
+        <div class="lm-frame__loader" aria-hidden="true">
+          <span class="lm-frame__spinner"></span>
+        </div>
+
+        <!-- src намеренно не задан: форму грузит JS при первом открытии,
+             иначе событие load пролетает мимо обработчика и спиннер не гаснет. -->
+        <iframe data-src="https://forms.yandex.ru/u/6abf4e88e010db9023fdf378/?iframe=1"
+                title="Форма заявки"
+                allow="clipboard-write"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <!-- В бесплатной Яндекс.Форме своей ссылки в согласии нет,
+           поэтому политика обязана быть здесь, снаружи iframe. -->
+      <p class="lm__note">Отправляя форму, вы соглашаетесь с <a href="#"
+        rel="nofollow">Политикой обработки персональных данных</a>.</p>
+
+      <!-- Аварийный вариант: показывается, если форма не пришла за&nbsp;12&nbsp;секунд.
+           href подставляется из data-src автоматически. -->
+      <p class="lm__fallback" id="lmFallback" hidden>
+        Форма не загрузилась&nbsp;— <a id="lmFallbackLink"
+          target="_blank" rel="noopener">откройте её в новой вкладке</a>.
+      </p>
+    </div>
+  </div>
+</div>
+
+<script src="lead-modal.js" defer></script>
+<script src="script.js"></script>
+</body>
+</html>

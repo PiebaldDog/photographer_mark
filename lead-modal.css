@@ -1,0 +1,275 @@
+/* ============================================================================
+   МОДАЛЬНОЕ ОКНО С ФОРМОЙ ЗАЯВКИ — переносимый блок
+   ----------------------------------------------------------------------------
+   Как подключить:
+     1) <link rel="stylesheet" href="lead-modal.css">   (в <head>)
+     2) <script src="lead-modal.js" defer></script>    (перед </body>)
+     3) Разметку из lead-modal.html вставить перед </body>
+     4) Кнопке, которая открывает форму, добавить атрибут data-open-modal
+
+   Ничего править в CSS/JS не нужно. Меняется только HTML: ссылка на форму,
+   заголовок, подзаголовок, текст согласия.
+
+   ПЕРЕКРАТИТЬ ЦВЕТА под свой проект — одной строкой в своём CSS (файл должен
+   подключаться ПОСЛЕ этого), например:
+     .lm { --lm-accent: #ff5a00; --lm-accent-soft: #fff3e8; }
+
+   Переменные с запасными значениями: если их не переопределять, блок
+   выглядит как в «Гексе» и «Чебурashке» — синий акцент на белом.
+   ============================================================================ */
+
+.lm {
+  /* ---- палитра (переопредели в своём CSS) ---- */
+  --lm-accent: #00769c;
+  --lm-accent-dark: #005f7d;
+  --lm-accent-soft: #e6f9fd;
+  --lm-surface: #ffffff;
+  --lm-ink: #212529;
+  --lm-ink-soft: #5c6670;
+  --lm-ink-mute: #8b959e;
+  --lm-border: #e6e9ec;
+  --lm-alert-soft: #fff6ec;
+  --lm-radius: 22px;
+  --lm-radius-sm: 12px;
+
+  /* ---- геометрия ---- */
+  --lm-dialog-w: 560px;
+  --lm-pad-x: 16px;
+  --lm-frame-h: 620px;
+  /* сколько высоты экрана уходит на шапку модалки + служебные отступы.
+     Подобрано под 3 строки текста; если текст короче — уменьшайте,
+     если длиннее и низ формы уезжает — увеличивайте. */
+  --lm-frame-reserve: 290px;
+
+  font-family: inherit;
+  color: var(--lm-ink);
+}
+
+/* ---------------------------------------------------------------- слой */
+.lm {
+  position: fixed;
+  inset: 0;
+  z-index: 900;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--lm-pad-x);
+}
+.lm.is-open { display: flex; }
+
+.lm__overlay {
+  position: absolute;
+  inset: 0;
+  padding: 0;
+  border: none;
+  background: rgba(33, 37, 41, .65);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  cursor: pointer;
+  animation: lmFade .25s ease;
+}
+@keyframes lmFade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---------------------------------------------------------------- диалог */
+.lm__dialog {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: var(--lm-dialog-w);
+  max-height: calc(100vh - var(--lm-pad-x) * 2);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--lm-surface);
+  border-radius: var(--lm-radius);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+  animation: lmIn .3s ease;
+}
+@keyframes lmIn {
+  from { opacity: 0; transform: translateY(24px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------------------------------------------------------------- шапка */
+/* Липкая: при прокрутке длинной формы цена и обещание остаются на виду,
+   и крестик не уезжает за верхний край. */
+.lm__head {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  padding: 20px 20px 16px;
+  text-align: center;
+  background: var(--lm-surface);
+  background-image: linear-gradient(180deg, var(--lm-accent-soft) 0%, rgba(255, 255, 255, 0) 100%);
+  border-bottom: 1px solid var(--lm-border);
+}
+
+.lm__badge {
+  display: inline-block;
+  margin-bottom: 13px;
+  padding: 6px 14px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--lm-accent-dark);
+  background: var(--lm-surface);
+  border: 1px solid var(--lm-accent-soft);
+  border-radius: 999px;
+  box-shadow: 0 8px 18px -10px rgba(0, 118, 156, .85);
+}
+
+.lm__title {
+  margin: 0 0 9px;
+  font-size: clamp(20px, 4.6vw, 25px);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -.01em;
+}
+.lm__title strong { color: var(--lm-accent-dark); }
+
+.lm__subtitle {
+  max-width: 42ch;
+  margin: 0 auto;
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--lm-ink-soft);
+}
+
+/* ---------------------------------------------------------------- тело */
+.lm__body { padding: 14px 18px 16px; }
+
+.lm__note {
+  margin: 12px 0 0;
+  text-align: center;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--lm-ink-mute);
+}
+.lm__note a {
+  color: var(--lm-accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(0, 150, 184, .4);
+  text-underline-offset: 2px;
+}
+.lm__note a:hover { color: var(--lm-accent); }
+
+/* ---------------------------------------------------------------- форма */
+.lm-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--lm-surface);
+  border-radius: 14px;
+}
+.lm-frame iframe {
+  display: block;
+  width: 100%;
+  height: min(var(--lm-frame-h), calc(100vh - var(--lm-frame-reserve)));
+  min-height: 300px;
+  border: 0;
+}
+
+.lm-frame__loader {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  background: var(--lm-surface);
+  /* Спиннер — чистая декорация, клики он не должен принимать НИКОГДА,
+     даже пока сам ещё виден во время затухания. pointer-events
+     применяется мгновенно, в отличие от transition. */
+  pointer-events: none;
+  transition: opacity .3s ease, visibility 0s linear .3s;
+}
+.lm-frame.is-loaded .lm-frame__loader {
+  opacity: 0;
+  visibility: hidden;   /* не просто прозрачность — убрать из табуляции */
+  transition: opacity .3s ease, visibility 0s;
+}
+.lm-frame.is-failed .lm-frame__loader { display: none; }
+
+.lm-frame__spinner {
+  width: 38px;
+  height: 38px;
+  border: 3px solid var(--lm-accent-soft);
+  border-top-color: var(--lm-accent);
+  border-radius: 50%;
+  animation: lmSpin .8s linear infinite;
+}
+@keyframes lmSpin { to { transform: rotate(360deg); } }
+
+/* Показывается, если форма не пришла за --lm-timeout мс или отдала ошибку */
+.lm__fallback {
+  margin: 12px 0 0;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--lm-ink-soft);
+  background: var(--lm-alert-soft);
+  border: 1px solid #ffd8b0;
+  border-radius: var(--lm-radius-sm);
+}
+.lm__fallback[hidden] { display: none; }
+.lm__fallback a {
+  color: var(--lm-accent-dark);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ---------------------------------------------------------------- крестик */
+.lm__close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 4;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  font-family: inherit;
+  font-size: 24px;
+  line-height: 1;
+  color: var(--lm-ink-soft);
+  background: var(--lm-surface);
+  border: 1px solid var(--lm-border);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px -10px rgba(33, 37, 41, .55);
+  cursor: pointer;
+  transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+}
+.lm__close:hover,
+.lm__close:focus-visible {
+  color: #fff;
+  background: var(--lm-accent);
+  border-color: var(--lm-accent);
+  transform: rotate(90deg);
+}
+
+/* ============================================================ адаптив */
+@media (max-width: 599px) {
+  .lm { --lm-frame-reserve: 280px; }
+  .lm__head { padding: 16px 14px 13px; }
+  .lm__badge { margin-bottom: 10px; padding: 5px 12px; font-size: 12.5px; }
+  .lm__body { padding: 12px 14px 14px; }
+  .lm-frame iframe { min-height: 280px; }
+}
+
+/* Невысокие экраны (ноутбук с открытым чемоданом) — ужимаем шапку,
+   чтобы кнопка формы осталась в зоне видимости без прокрутки. */
+@media (max-height: 720px) {
+  .lm__head { padding: 14px 18px 12px; }
+  .lm__badge { margin-bottom: 8px; padding: 5px 12px; font-size: 12.5px; }
+  .lm__title { font-size: 19px; margin-bottom: 6px; }
+  .lm__subtitle { font-size: 13.5px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lm__overlay,
+  .lm__dialog { animation: none; }
+  .lm-frame__spinner { animation-duration: 2s; }
+}
