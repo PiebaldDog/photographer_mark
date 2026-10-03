@@ -1206,6 +1206,31 @@ body.nav-open .burger span:nth-child(2){ transform:translateY(-3.5px) rotate(-45
   .nav__cta:hover{ background:var(--ink); color:var(--bg); }
   .burger{ display:block; }
 
+  /* Открытое мобильное меню: панель .nav (position:fixed; inset:0; z-index:105)
+     перекрывает шапку целиком — непрозрачная подложка var(--bg) идёт от верхней
+     кромки экрана, сэндвич остаётся поверх неё на z-index:110. Значит размытие
+     под шапкой в этот момент всё равно не видно.
+
+     Но backdrop-filter на .header — единственное свойство предка .nav, которое
+     создаёт containing block для position:fixed потомков. Пока оно есть,
+     position:fixed у .nav отсчитывается от бокса шапки (--header-h), а не от
+     экрана: панель схлопывается до высоты шапки, её overflow-y:auto превращается
+     в ящик без прокрутки, а body.nav-open{overflow:hidden} не даёт доехать до
+     пунктов странице. Виден только первый — «Портфолио».
+
+     Баг был виден только после прокрутки: в шапке героя класса .is-scrolled нет,
+     backdrop-filter ещё не применён, containing block не создан, поэтому на
+     первом экране меню открывалось целиком.
+
+     transition:none обязателен. В .header переход backdrop-filter идёт .5s, и без
+     этой строки containing block жил бы первые полсекунды после открытия меню —
+     ровно тот случай, когда панель «моргает» обрезанной. */
+  body.nav-open .header.is-scrolled{
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+    transition:none;
+  }
+
   .pains__grid{ grid-template-columns:1fr; }
   .pains__spine{ display:none; }
   .pains__col--right{ padding-top:clamp(38px,5vw,64px); }
