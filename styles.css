@@ -138,6 +138,13 @@ section{ scroll-margin-top: calc(var(--header-h) + 16px); }
   text-align:center;
   position:relative;
   overflow:hidden;
+  /* Подсветка касания, которую рисует сам браузер, а не этот CSS.
+     На телефонах она часто голубая — на Vivo Y33s кнопка при нажатии
+     успевала побелеть, посинеть и почернеть — то есть 4 цвета подряд.
+     Заливка снизу вверх через ::after и так даёт обратную связь,
+     поэтому плёнка здесь только мешает. На десктопном наведении
+     не сказывается: это свойство действует только на касание. */
+  -webkit-tap-highlight-color:transparent;
   transition:color .45s var(--ease), border-color .45s var(--ease);
 }
 .btn::after{
